@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/auth/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/auth/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/auth/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/auth/css/style.css">
+
+    <title>Onclass - Sign In</title>
+  </head>
+  <body>
+  
+    <div></div>
+ 
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="/static/auth/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <br>
+        {% block content %}
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Sign In</h3>
+              
+            </div>
+            <form  method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                {{form.username}}
+                <span class="error">{{form.username.errors}}</span>
+              </div>
+
+              <div class="form-group">
+                {{form.password}}
+                <span class="error">{{form.password.errors}}</span>
+              </div>
+              <p>You don't have an <a href="{% url 'register' %}">account</a> yet?</p>
+              <button class="btn btn-block btn-primary" type="submit"> Login</button>
+              <br>
+              {% if form.non_field_errors %}
+              <div class="non_form_errors">
+                <span class="error">{{form.non_field_errors.as_ul}}</span>
+              </div>
+              {% endif %}
+             
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        {% endblock content %}
+       
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+    <script src="/static/auth/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/auth/js/popper.min.js"></script>
+    <script src="/static/auth/js/bootstrap.min.js"></script>
+    <script src="/static/auth/js/main.js"></script>
+  </body>
+</html>

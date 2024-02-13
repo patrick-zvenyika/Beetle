@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Modal Dialog with Backdrop Blur [Only CSS]</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Please ❤ this if you like it! ---
+---- Follow Me https://codepen.io/designfenix -->
+<!--
+----
+----
+----
+----
+----
+----
+---->
+<button class="primary" onclick="window.dialog.showModal();">Open Dialog</button>
+
+<dialog id="dialog">
+	<h2>Hello.</h2>
+	<p>A CSS-only modal based on the <a href="https://developer.mozilla.org/es/docs/Web/CSS/::backdrop" target="_blank">::backdrop</a> pseudo-class. Hope you find it helpful.</p>
+	<p>You can also change the styles of the <code>::backdrop</code> from the CSS.</p>
+	<button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+</dialog>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
