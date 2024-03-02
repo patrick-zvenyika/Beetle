@@ -2,214 +2,520 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beetle</title>
 
-    <title>Discovery - Blog</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/static/dashboard/images/favicon.ico" type="image/x-icon">
 
-    <!-- Favicons -->
-    <link href="/static/dashboard/images/logo.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/static/dashboard/css/style.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="/static/dashboard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/dashboard/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/static/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="/static/dashboard/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/static/dashboard/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="/static/dashboard/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="/static/dashboard/css/main.css" rel="stylesheet">
-
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
+<body class="light-theme">
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header d-flex align-items-center">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <!--
+    - #HEADER
+  -->
 
-            <a href="index.html" class="logo d-flex align-items-center">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="images/logo.png" alt=""> -->
-                <h1>Discovery<span>.</span></h1>
+  <header>
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="#">
+          <img src="/static/dashboard/images/logo-light.svg" alt="Devblog's logo" width="150" class="logo-light">
+          <img src="/static/dashboard/images/logo-dark.svg" alt="Devblog's logo" width="150" class="logo-dark">
+        </a>
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href="#" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">Profile</a>
+            </li>
+          </ul>
+
+          <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Main Menu</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Topics</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Database</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Accessibility</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Web Performance</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+
+    <!--
+      - #HERO SECTION
+    -->
+
+    <!-- <div class="hero">
+
+      <div class="container">
+
+        <div class="left">
+
+          <h1 class="h1">
+            Hi, I'm <b>Julia&nbsp;Walker</b>.
+            <br>Web Developer
+          </h1>
+
+          <p class="h3">
+            Specialized in <abbr title="Accessibility">a11y</abbr>
+            and Core Web Vitals
+          </p>
+
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Contact Me</a>
+            <a href="#" class="btn btn-secondary">About Me</a>
+          </div>
+
+        </div>
+
+        <div class="right">
+
+          <div class="pattern-bg"></div>
+          <div class="img-box">
+            <img src="./assets/images/hero.png" alt="Julia Walker" class="hero-img">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> -->
+
+
+
+
+
+    <div class="main">
+
+      <div class="container">
+
+        <!--
+          - BLOG SECTION
+        -->
+
+        <div class="blog">
+
+          <h2 class="h2">Latest Blog Post</h2>
+          <div class="newsletter">
+            <div class="wrapper">
+              <form action="#">
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+
+            </div>
+          </div>
+
+
+
+          <div class="blog-card-group">
+            <div class="blog-card">
+
+              <div class="blog-card-banner">
+                <img src="/static/dashboard/images/blog-3.png" alt="Accessibility Tips for Web Developers" width="250"
+                  class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+
+                <button class="blog-topic text-tiny">Accessibility</button>
+
+                <h3><a href="" class="h3">Accessibility Tips for Web Developers</a></h3>
+
+                <p class="blog-text">
+                  It's awesome to build sites that are inclusive and accessible to everyone. There are at least six key
+                  areas of
+                  disability we can optimize for: visual, hearing, mobility, cognition, speech and neural. Many tools
+                  and resources can
+                  help here, even if you're totally new to web accessibility.
+                </p>
+
+                <div class="wrapper-flex">
+
+                  <div class="profile-wrapper">
+                    <img src="/static/dashboard/images/author.png" alt="Julia walker" width="50">
+                  </div>
+
+                  <div class="wrapper">
+                    <a href="#" class="h4">Julia Walker</a>
+
+                    <p class="text-sm">
+                      <time datetime="2021-11-28">Nov 28, 2021</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                      <time datetime="PT4M">4 min</time>
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="blog-card">
+
+              <div class="blog-card-banner">
+                <img src="/static/dashboard/images/blog-4.png" alt="Dynamically Securing Databases using Hashicorp Vault"
+                  width="250" class="blog-banner-img">
+              </div>
+
+              <div class="blog-content-wrapper">
+
+                <button class="blog-topic text-tiny">Database</button>
+
+                <h3><a href="" class="h3">Dynamically Securing Databases using Hashicorp Vault</a></h3>
+
+                <p class="blog-text">
+                  Nowadays, it's hard to profoundly talk about security in the IT industry, since it has to be
+                  considered on so many
+                  different levels: from securing code chunks, securing containers, up to securing complex
+                  infrastructures and defining
+                  strong authorization and authentication policies across the enterprise.
+                </p>
+
+                <div class="wrapper-flex">
+
+                  <div class="profile-wrapper">
+                    <img src="/static/dashboard/images/author.png" alt="Julia walker" width="50">
+                  </div>
+
+                  <div class="wrapper">
+                    <a href="#" class="h4">Julia Walker</a>
+
+                    <p class="text-sm">
+                      <time datetime="2021-11-20">Nov 20, 2021</time>
+                      <span class="separator"></span>
+                      <ion-icon name="time-outline"></ion-icon>
+                      <time datetime="PT4M">4 min</time>
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <button class="btn load-more">Load More</button>
+
+        </div>
+
+
+
+
+
+        <!--
+          - ASIDE
+        -->
+
+        <div class="aside">
+
+          <div class="topics">
+
+            <h2 class="h2">Topics</h2>
+
+            <!-- <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="search"></ion-icon>
+              </div>
+
+              <input class="form-input" type="text" />
+            </a> -->
+
+            <!-- <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="accessibility-outline"></ion-icon>
+              </div>
+
+              <p>Accessibility</p>
             </a>
 
-            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a href="blog.html" class="active">Feed</a></li>
-                    <li><a href="contact.html">New Post</a></li>
-                </ul>
-            </nav>
-            <!-- .navbar -->
+            <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="rocket-outline"></ion-icon>
+              </div>
+
+              <p>Web Performance</p>
+            </a> -->
+
+          </div>
+
+          <div class="tags">
+
+            <h2 class="h2">Tags</h2>
+
+            <div class="wrapper">
+
+              <button class="hashtag">#mongodb</button>
+              <button class="hashtag">#nodejs</button>
+              <button class="hashtag">#a11y</button>
+              <button class="hashtag">#mobility</button>
+              <button class="hashtag">#inclusion</button>
+              <button class="hashtag">#webperf</button>
+              <button class="hashtag">#optimize</button>
+              <button class="hashtag">#performance</button>
+
+            </div>
+
+          </div>
+
+          <div class="contact">
+
+            <h2 class="h2">Let's Talk</h2>
+
+            <div class="wrapper">
+
+              <p>
+                Do you want to learn more about how I can help your company overcome problems? Let us have a
+                conversation.
+              </p>
+
+              <ul class="social-link">
+
+                <li>
+                  <a href="#" class="icon-box discord">
+                    <ion-icon name="logo-discord"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="icon-box twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="icon-box facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="newsletter">
+
+            <h2 class="h2">Newsletter</h2>
+
+            <div class="wrapper">
+
+              <p>
+                Subscribe to our newsletter to be among the first to keep up with the latest updates.
+              </p>
+
+              <form action="#">
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+
+            </div>
+
+          </div>
 
         </div>
-    </header>
-    <!-- End Header -->
 
-    <main id="main">
+      </div>
 
-        <!-- ======= Breadcrumbs ======= -->
-        <div class="breadcrumbs d-flex align-items-center" style="background-image: url('images/dis.jpg');">
-            <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+    </div>
 
-                <h2>Blog</h2>
-                <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li>Blog</li>
-                </ol>
+  </main>
 
-            </div>
-        </div>
-        <!-- End Breadcrumbs -->
 
-        <!-- ======= Blog Section ======= -->
-        <section id="blog" class="blog">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="row g-5">
 
-                    <div class="col-lg-8">
 
-                        <article class="blog-details">
+  <!--
+    - #FOOTER
+  -->
 
-                            <div class="post-img">
-                                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                            </div>
+  <footer>
 
-                            <h2 class="title">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
+    <div class="container">
 
-                            <div class="meta-top">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>John Doe</li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">Jan 1, 2022</time></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                </ul>
-                            </div>
-                            <!-- End meta top -->
-                            <div class="content">
-                                <p>
-                                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta. Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos
-                                    aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                                </p>
+      <div class="wrapper">
 
-                                <p>
-                                    Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
-                                </p>
-                            </div>
-                            <!-- <div class="content">
-                                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+        <a href="#" class="footer-logo">
+          <img src="./assets/images/logo-light.svg" alt="DevBlog's Logo" width="150" class="logo-light">
+          <img src="./assets/images/logo-dark.svg" alt="DevBlog's Logo" width="150" class="logo-dark">
+        </a>
 
-                            </div> -->
-                            <!-- End post content -->
+        <p class="footer-text">
+          ""
+        </p>
 
-                            <div class="meta-bottom">
-                                <i class="bi bi-folder"></i>
-                                <ul class="cats">
-                                    <li><a href="#">Business</a></li>
-                                </ul>
+      </div>
 
-                                <i class="bi bi-tags"></i>
-                                <ul class="tags">
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Tips</a></li>
-                                    <li><a href="#">Marketing</a></li>
-                                </ul>
-                            </div>
-                            <!-- End meta bottom -->
+      <div class="wrapper">
 
-                        </article>
-                        <!-- End blog post -->
-                    </div>
+        <p class="footer-title">Quick Links</p>
 
-                    <div class="col-lg-4">
+        <ul>
 
-                        <div class="sidebar">
+          <li>
+            <a href="#" class="footer-link">Advertise with us</a>
+          </li>
 
-                            <div class="sidebar-item search-form">
-                                <h3 class="sidebar-title">Search</h3>
-                                <form action="" class="mt-3">
-                                    <input type="text">
-                                    <button type="submit"><i class="bi bi-search"></i></button>
-                                </form>
-                            </div>
-                            <!-- End sidebar search formn-->
+          <li>
+            <a href="#" class="footer-link">About Us</a>
+          </li>
 
-                            <div class="sidebar-item categories">
-                                <h3 class="sidebar-title">Categories</h3>
-                                <ul class="mt-3">
-                                    <li><a href="#">General <span>(25)</span></a></li>
-                                    <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                                    <li><a href="#">Travel <span>(5)</span></a></li>
-                                    <li><a href="#">Design <span>(22)</span></a></li>
-                                    <li><a href="#">Creative <span>(8)</span></a></li>
-                                    <li><a href="#">Educaion <span>(14)</span></a></li>
-                                </ul>
-                            </div>
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
 
-                        </div>
-                        <!-- End Blog Sidebar -->
+        </ul>
 
-                    </div>
-                </div>
+      </div>
 
-            </div>
-            <div class="blog-pagination">
-                <ul class="justify-content-center">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </div>
-        </section>
-        <!-- End Blog Section -->
+      <div class="wrapper">
 
-    </main>
-    <!-- End #main -->
+        <p class="footer-title">Legal Stuff</p>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-        <div class="footer-legal text-center position-relative">
-            <div class="container">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Discovery</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-            </div>
-        </div>
+        <ul>
 
-    </footer>
-    <!-- End Footer -->
+          <li>
+            <a href="#" class="footer-link">Privacy Notice</a>
+          </li>
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+          <li>
+            <a href="#" class="footer-link">Cookie Policy</a>
+          </li>
 
-    <div id="preloader"></div>
+          <li>
+            <a href="#" class="footer-link">Terms Of Use</a>
+          </li>
 
-    <!-- Vendor JS Files -->
-    <script src="/static/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/dashboard/vendor/aos/aos.js"></script>
-    <script src="/static/dashboard/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="/static/dashboard/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="/static/dashboard/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="/static/dashboard/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/static/dashboard/vendor/php-email-form/validate.js"></script>
+        </ul>
 
-    <!-- Template Main JS File -->
-    <script src="/static/dashboard/js/main.js"></script>
+      </div>
 
+    </div>
+
+    <p class="copyright">
+      &copy; Copyright 2022 <a href="#">DevBlog</a>
+    </p>
+
+  </footer>
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="/static/dashboard/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

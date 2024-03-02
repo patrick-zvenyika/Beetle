@@ -250,7 +250,8 @@ body {
   -ms-transform: translate(-50%, -50%); }
 
 .signup {
-  margin-bottom: 150px; }
+  margin-top: -40px
+   }
 
 .signup-content {
   padding: 75px 0; }
@@ -539,6 +540,7 @@ label.valid {
     margin-left: 0px;
     margin-right: 0px;
     padding-left: 0px;
+    margin-top: -60px;
     /* box-sizing: border-box; */
     padding: 0 30px; }
 
