@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django import forms
 from django.db import models
-from .models import Question, Response
+from .models import Post, Response
 
 class RegisterUserForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -27,17 +27,34 @@ class LoginForm(AuthenticationForm):
         self.fields['username'].widget.attrs ={'placeholder':'@jandoe'}
         self.fields['password'].widget.attrs ={'placeholder': 'Password'}
 
-class NewQuestionForm(forms.ModelForm):
+class NewPostForm(forms.ModelForm):
 
     class Meta:
-         model = Question
-         fields = ['title','subject','body']
+         model = Post
+         fields = ['title','subject','body','file']
 
          widgets ={
              'title':forms.TextInput(attrs={
                  'autofocus' : True,
                 'placeholder' : 'Your question title',
-                })
+                'class': 'form-control'
+                }),
+                'subject':forms.TextInput(attrs={
+                 'autofocus' : True,
+                'placeholder' : 'Tag/Subject',
+                'class': 'form-control'
+                }),
+                'body':forms.Textarea(attrs={
+                 'autofocus' : True,
+                'placeholder' : 'Your post content',
+                'style': 'height: 100px; width: 320px; resize: none;  background-color: hsl(218, 23%, 23%); color: white; border-radius: 3px; padding: 0 10px; margin-top: 8px; font-size: 14px; font-weight: 300; margin-bottom: 40px;',
+                'class': 'form-control'
+                }),
+                'file':forms.FileInput(attrs={
+                 'autofocus' : True,
+                'class': 'form-control',
+                'style': 'height: 50px; width: 325px;',
+                }),
          }
 
 class NewResponseForm(forms.ModelForm):

@@ -20,7 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,40 +117,40 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-JAZZMIN_SETTINGS = {
+# JAZZMIN_SETTINGS = {
 
-    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "BEETLE",
+#     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_header": "BEETLE",
 
-    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Admin",
+#     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_brand": "Admin",
 
-    # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": None,
+#     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
+#     "login_logo": None,
 
-    # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": None,
+#     # Logo to use for login form in dark themes (defaults to login_logo)
+#     "login_logo_dark": None,
 
-    # CSS classes that are applied to the logo above
-    "site_logo_classes": "img-circle",
+#     # CSS classes that are applied to the logo above
+#     "site_logo_classes": "img-circle",
 
-    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": None,
+#     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+#     "site_icon": None,
 
-    # Welcome text on the login screen
-    "welcome_sign": "BEETLE ADMIN",
+#     # Welcome text on the login screen
+#     "welcome_sign": "BEETLE ADMIN",
 
-    # Copyright on the footer
-    "copyright": "Beetle",
+#     # Copyright on the footer
+#     "copyright": "Beetle",
 
-    # Links to put along the top menu
-    "topmenu_links": [
+#     # Links to put along the top menu
+#     "topmenu_links": [
 
-        # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+#         # Url that gets reversed (Permissions can be added)
+#         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
-        # model admin to link to (Permissions checked against model)
-        {"model": "auth.User"},
+#         # model admin to link to (Permissions checked against model)
+#         {"model": "auth.User"},
 
-    ],
-}
+#     ],
+# }

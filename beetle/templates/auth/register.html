@@ -10,154 +10,170 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!--Stylesheet-->
     <style media="screen">
-      *,
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: gray;
-}
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-{% comment %} .background .shape{
-    height: 150px;
-    width: 150px;
-    position: absolute;
-    border-radius: 50%;
-}
-.shape:first-child{
-    background: linear-gradient(
-        #1845ad,
-        #23a2f6
-    );
-    left: -80px;
-    top: -80px;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -30px;
-    bottom: -80px;
-} {% endcomment %}
-form{
-    height: 650px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
-}
-form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
-form h3{
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-}
-
-label{
-    display: block;
+        *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  body{
+      background-color: #f8f8f8;
+  }
+  .background{
+      width: 430px;
+      height: 520px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+  }
+  {% comment %} .background .shape{
+      height: 150px;
+      width: 150px;
+      position: absolute;
+      border-radius: 50%;
+  }
+  .shape:first-child{
+      background: linear-gradient(
+          #1845ad,
+          #23a2f6
+      );
+      left: -80px;
+      top: -80px;
+  }
+  .shape:last-child{
+      background: linear-gradient(
+          to right,
+          #ff512f,
+          #f09819
+      );
+      right: -30px;
+      bottom: -80px;
+  } {% endcomment %}
+  form{
+      height: 650px;
+      width: 400px;
+      background-color: lightgray;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 40px rgba(8,7,16,0.6);
+      padding: 50px 35px;
+  }
+  form *{
+      font-family: 'Poppins',sans-serif;
+      color: hsl(218, 23%, 23%);
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+  }
+  form h3{
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 42px;
+      text-align: center;
+      margin-bottom: 60px;
+  }
+  
+  label{
+      display: block;
+      margin-top: 30px;
+      font-size: 12px;
+      font-weight: 500;
+  }
+  input{
+      display: block;
+      height: 50px;
+      width: 100%;
+      background-color: hsl(218, 23%, 23%);
+      color: white;
+      border-radius: 3px;
+      padding: 0 10px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 40px;
+  }
+  ::placeholder{
+      color: #e5e5e5;
+  }
+  button{
+      margin-top: 10px;
+      width: 100%;
+      background-color:  hsl(218, 23%, 23%);
+      color: white;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .social{
     margin-top: 30px;
-    font-size: 12px;
-    font-weight: 500;
-}
-input{
-    display: block;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255,255,255,0.07);
+    display: flex;
+  }
+  .social div{
+    background: red;
+    width: 150px;
     border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
-}
-::placeholder{
-    color: #e5e5e5;
-}
-button{
-    margin-top: 20px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.social{
-  margin-top: 20px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
-}
-
-    </style>
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255,255,255,0.27);
+    color: #eaf0fb;
+    text-align: center;
+  }
+  .social p{
+      text-align:center;
+      font-size:12px;
+  }
+  
+  
+  .message{
+      margin-top: 20px;
+      display: flex;
+  }
+  
+  .message p{
+      text-align: center;
+      font-size: 10px;
+      color: red;
+  }
+  
+      </style>
 </head>
 <body>
     <div class="background">
         {% comment %} <div class="shape"></div>
         <div class="shape"></div> {% endcomment %}
     </div>
-    <form>
+    <form method="POST">
+        {% csrf_token %}
         <h3>Register Here</h3>
 
-        <label for="username">Username</label>
+        {% comment %} <label for="username">Username</label> {% endcomment %}
         <input type="text" placeholder="username" name="username">
 
-        <label for="username">Email</label>
+        {% comment %} <label for="username">Email</label> {% endcomment %}
         <input type="email" placeholder="username@gmail.com" name="email">
 
-        <label for="username">Password</label>
-        <input type="text" placeholder="password" name="password1">
+        {% comment %} <label for="username">Password</label> {% endcomment %}
+        <input type="password" placeholder="password" name="password1">
 
-        <label for="password">Confirm Password</label>
+        {% comment %} <label for="password">Confirm Password</label> {% endcomment %}
         <input type="password" placeholder="confirm assword" name="password2">
 
-        <button>Log In</button>
+        <button type="submit">Register</button>
         <div class="social">
             <p>If you have an account, <a href='{% url 'login' %}'>click</a> here.</p>
+        </div>
+        <div class="message">
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {%endfor%}
         </div>
     </form>
 </body>

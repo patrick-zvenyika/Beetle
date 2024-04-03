@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-from .models import Question, Response
+from .models import Post, Response
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import *
@@ -40,15 +40,15 @@ def registerPage(request):
         try:
             # Check if passwords match
             if password1 != password2:
-                raise ValueError("Passwords do not match")
+                messages.error(request,"Passwords do not match")
 
             # Check if username is already taken
             if User.objects.filter(username=username).exists():
-                raise ValueError("Username already exists")
+                messages.error(request,"Username already exists")
 
             # Check if email is already taken
             if User.objects.filter(email=email).exists():
-                raise ValueError("Email already exists")
+                messages.error(request,"Email already exists")
 
             # Create a new user
             user = User.objects.create_user(username=username, email=email, password=password1)
@@ -65,11 +65,35 @@ def registerPage(request):
     # Render registration page
     return render(request, 'auth/register.html')
 
+def Logout(request):
+    logout(request)
+    return redirect('login')
 
-#@login_required(login_url = 'login.html')
+@login_required(login_url = 'login')
 def main(request):
     # questions = Question.objects.all().order_by('-created_at')
     # context = {
     #     'questions' : questions
     # }
     return render (request, 'dashboard/index.html')
+
+@login_required(login_url = 'login')
+def CreatePost(request):
+    if request.method == 'POST':
+        form = NewPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            subject = form.cleaned_data['subject']
+            body = form.cleaned_data['body']
+            file = form.cleaned_data['file']
+
+            messages.success(request, 'Post created successfully!')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}:{error}")
+    
+    else:
+        form = NewPostForm()
+
+    return render (request, 'dashboard/new-post.html', {'form':form})

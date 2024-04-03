@@ -542,7 +542,10 @@ footer .wrapper { text-align: center; }
   padding: 1rem;
   border-top: 1px solid var(--action-primary);
 }
-
+.copyright p{
+  text-align: center;
+  padding: 1rem;
+}
 .copyright a {
   color: var(--accent);
   font-weight: 500;
@@ -552,7 +555,9 @@ footer .wrapper { text-align: center; }
 
 
 
-
+.my-buttons{
+  display: inline-flex;
+}
 
 /*-----------------------------------*\
   #MEDIA QUERIES

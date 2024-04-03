@@ -8,7 +8,7 @@ class Subject(models.Model):
     def __str__(self):
         return self.subject
 
-class Question(models.Model):
+class Post(models.Model):
     author = models.ForeignKey(User, null=True, on_delete = models.CASCADE)
     title = models.CharField(max_length = 300,null=False)
     subject = models.ForeignKey(Subject,null=True, on_delete = models.CASCADE)
@@ -25,7 +25,7 @@ class Question(models.Model):
 
 class Response(models.Model):
     user = models.ForeignKey(User, null=False, on_delete = models.CASCADE)
-    question = models.ForeignKey(Question, null=False, on_delete = models.CASCADE, related_name = 'responses')
+    question = models.ForeignKey(Post, null=False, on_delete = models.CASCADE, related_name = 'responses')
     parent = models.ForeignKey('self', null=True, blank = True, on_delete = models.CASCADE)
     body = models.TextField(null = False)
     file = models.FileField( upload_to='media',blank=True)
