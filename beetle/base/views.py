@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from .models import Post, Response
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import *
+from django.http import HttpResponse, FileResponse, Http404
 # Create your views here.
 def loginPage(request):
     if request.user.is_authenticated:
@@ -71,11 +72,23 @@ def Logout(request):
 
 @login_required(login_url = 'login')
 def main(request):
-    # questions = Question.objects.all().order_by('-created_at')
-    # context = {
-    #     'questions' : questions
-    # }
-    return render (request, 'dashboard/index.html')
+    posts = Post.objects.all().order_by('-created_at')
+    context = {
+        'posts' : posts
+    }
+    return render (request, 'dashboard/index.html', context)
+
+def download_file(request, pk):
+    doc = get_object_or_404(Post, pk=pk)
+    file_path = Post.file.path  # Assuming `file` is the field name for the ebook file in the model
+    try:
+        response = FileResponse(open(file_path, 'rb'), content_type='application/pdf')
+        response['Content-Disposition'] = f'attachment; filename="{Post.title}.pdf"'
+        return response
+    except FileNotFoundError:
+        raise Http404("Ebook not found")
+
+
 
 @login_required(login_url = 'login')
 def CreatePost(request):
